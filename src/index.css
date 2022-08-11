@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: #eee;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#root {
+    display: grid;
+    grid-template-rows: 100% 20px;
+}
+
+main .container {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+main .container section.videos {
+    display: grid;
+    grid-template-rows:  70vh 1fr;
+    gap: 30px;
+}
+
+main .container .video-detail {
+    border-bottom: 5px solid #000;
+}
+
+main .container .video-list {
+    display: grid;
+    grid-auto-rows: 280px;
+}
+
+main .container .video-list-item {
+    border-bottom: 5px solid #aaa;
+    padding-bottom: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main .container .video-list-item img {
+    flex: 1 70%;
+    margin-bottom: 10px;
+}
+
+main .container .video-list-item-detail {
+    flex: 1 30%;
+    justify-self: center;
+    padding: 0 5px;
+}
+
+main .container .video-list-item-detail h4 {
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+main .container .video-list-item-detail p {
+    font-weight: 100;
+    font-size: 0.8em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer {
+    /* align-self: center; */
+    background-color: #00ffff;
+}
+
+/* MEDIA QURIES */
+
+@media screen and (min-width: 500px) {
+    .videos-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main .container .search-bar {
+        align-self: center;
+    }
+
+    main .container section.videos {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 70vh;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    main .container .video-list {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 }
